@@ -8,10 +8,10 @@ function App() {
 
   return (
 
-    <div className="font-urbanist antialiased text-gray-600 flex flex-col min-h-screen">
+    <div className="font-urbanist antialiased bg-gray-100 text-gray-600 flex flex-col min-h-screen">
       <BrowserRouter>
         <Navbar />
-        <main className="flex flex-grow">
+        <main className="flex flex-grow p-8">
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/about" element={<About />} />

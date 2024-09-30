@@ -11,7 +11,7 @@ export const Navbar = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? 'bg-black text-white px-4 py-2 rounded' : 'px-4 py-2'
+              `px-4 py-2 rounded transition duration-300 ${isActive ? 'bg-black text-white' : 'hover:bg-gray-200'}`
             }
           >
             Home
@@ -21,7 +21,7 @@ export const Navbar = () => {
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              isActive ? 'bg-black text-white px-4 py-2 rounded' : 'px-4 py-2'
+              `px-4 py-2 rounded transition duration-300 ${isActive ? 'bg-black text-white' : 'hover:bg-gray-200'}`
             }
           >
             About
