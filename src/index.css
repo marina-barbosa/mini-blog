@@ -3,3 +3,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+@layer components {
+
+  /* Botão Primary */
+  .btn-primary {
+    @apply bg-[#1a8918] text-white text-center cursor-pointer rounded w-[120px] font-bold border-none px-[15px] py-[10px] text-base;
+  }
+
+  .btn-primary:hover {
+    @apply bg-[#0f730c];
+  }
+
+  /* Botão Dark */
+  .btn-dark {
+    @apply bg-black text-white rounded;
+  }
+
+  /* Botão Outline */
+  .btn-outline {
+    @apply bg-transparent text-black border border-black rounded px-[30px] py-[7px];
+  }
+
+  .btn-outline:hover {
+    @apply bg-black text-white;
+  }
+
+  /* Botão Disabled */
+  .btn-disabled {
+    @apply bg-[#aaa] text-white rounded w-[120px] font-bold border-none px-[15px] py-[10px] cursor-not-allowed;
+  }
+
+  /* Estilo de erro */
+  .error {
+    @apply text-[#721c24] bg-[#f8d7da] border border-[#f5c6cb] p-5 rounded;
+  }
+}
