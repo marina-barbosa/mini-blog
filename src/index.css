@@ -10,7 +10,7 @@
 
   /* Botão Primary */
   .btn-primary {
-    @apply bg-[#1a8918] text-white text-center cursor-pointer rounded w-[120px] font-bold border-none px-[15px] py-[10px] text-base;
+    @apply bg-[#1a8918] text-white text-center cursor-pointer rounded w-[120px] font-bold border-none px-[15px] py-[10px] text-base transition duration-300;
   }
 
   .btn-primary:hover {
