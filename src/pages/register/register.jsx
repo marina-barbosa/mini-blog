@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { useAuthentication } from "../../hooks/useAuthentication"
 
 export const Register = () => {
   const [displayName, setDisplayName] = useState("")
@@ -7,7 +8,9 @@ export const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("")
   const [error, setError] = useState("")
 
-  const handleSubmit = (e) => {
+  const { createUser, error: authError, loading } = useAuthentication()
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
     const user = {
@@ -23,9 +26,15 @@ export const Register = () => {
 
     setError("")
 
-    console.log(user)
-
+    const response = await createUser(user)
+    console.log(response)
   }
+
+  useEffect(() => {
+    if (authError) {
+      setError(authError)
+    }
+  }, [authError])
 
   return (
     <div className="mx-auto md:w-2/5 text-center">
@@ -91,7 +100,8 @@ export const Register = () => {
           >Confirmar Senha</label>
         </div>
         {/* Button */}
-        <button type="submit" className="btn-primary">Cadastrar</button>
+        {!loading && <button type="submit" className="btn-primary">Cadastrar</button>}
+        {loading && <button type="submit" disabled>Aguarde...</button>}
         {error && <p className="error">{error}</p>}
       </form>
 
