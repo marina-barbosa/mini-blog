@@ -27,7 +27,6 @@ export const Register = () => {
     setError("")
 
     const response = await createUser(user)
-    console.log(response)
   }
 
   useEffect(() => {

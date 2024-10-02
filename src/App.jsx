@@ -5,6 +5,8 @@ import { Navbar } from "./components/navbar"
 import { Footer } from "./components/footer"
 import { Register } from "./pages/register/register"
 import { Login } from "./pages/login/login"
+import { CreatePost } from "./pages/createPost/createPost"
+import { Dashboard } from "./pages/dashboard/dashboard"
 import { onAuthStateChanged } from "firebase/auth"
 
 import { useState, useEffect } from "react"
@@ -44,8 +46,10 @@ function App() {
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route exact path="/about" element={<About />} />
-              <Route exact path="/register" element={<Register />} />
-              <Route exact path="/login" element={<Login />} />
+              <Route exact path="/register" element={!currentUser ? <Register /> : <Navigate to="/" />} />
+              <Route exact path="/login" element={!currentUser ? <Login /> : <Navigate to="/" />} />
+              <Route exact path="/posts/create" element={currentUser ? <CreatePost /> : <Navigate to="/login" />} />
+              <Route path="/dashboard" element={currentUser ? <Dashboard /> : <Navigate to="/login" />} />
               <Route path="*" element={() => <Navigate to="/" replace />} />
             </Routes>
           </main>
