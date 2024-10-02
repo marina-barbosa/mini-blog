@@ -1,5 +1,5 @@
 import db from "../firebase/config"
-import { getAuth, createUserWithEmailAndPassword, updateProfile, signOut } from "firebase/auth"
+import { getAuth, createUserWithEmailAndPassword, updateProfile, signOut, signInWithEmailAndPassword } from "firebase/auth"
 
 import { useState, useEffect } from "react"
 
@@ -18,6 +18,7 @@ export const useAuthentication = () => {
     }
   }
 
+  // Register
   // Função para criar um novo usuário no Firebase Authentication
   async function createUser(data) {
     checkIfIsCancelled()
@@ -55,6 +56,36 @@ export const useAuthentication = () => {
       setLoading(false)
     }
   }
+
+  // Logout
+  const logout = () => {
+    checkIfIsCancelled()
+    signOut(auth)
+    console.log("saiu?")
+    console.log(auth)
+  }
+
+  // login
+  const login = async (data) => {
+    checkIfIsCancelled()
+    setLoading(true)
+    setError(null)
+    try {
+      await signInWithEmailAndPassword(auth, data.email, data.password)
+      console.log(auth.currentUser.displayName)
+    } catch (error) {
+      let systemErrorMessage
+      if (error.message.includes("invalid-credential")) {
+        systemErrorMessage = "Senha e/ou email inválido."
+      } else {
+        systemErrorMessage = "Ocorreu um erro, por favor tente mais tarde."
+      }
+      setError(systemErrorMessage)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   // useEffect que realiza um "clean-up" ao desmontar o componente, prevenindo memory leaks
   useEffect(() => {
     return () => setCancelled(true)
@@ -65,5 +96,7 @@ export const useAuthentication = () => {
     createUser,   // Função para criação de novos usuários
     error,        // Estado de erro para exibir mensagens de erro
     loading,      // Estado de carregamento para exibir feedback ao usuário
+    logout,
+    login,
   }
 }
