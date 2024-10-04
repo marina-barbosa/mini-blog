@@ -45,6 +45,7 @@ function App() {
           <main className="flex flex-grow p-8">
             <Routes>
               <Route exact path="/" element={<Home />} />
+              <Route exact path="/home" element={<Home />} />
               <Route exact path="/about" element={<About />} />
               <Route exact path="/register" element={!currentUser ? <Register /> : <Navigate to="/" />} />
               <Route exact path="/login" element={!currentUser ? <Login /> : <Navigate to="/" />} />

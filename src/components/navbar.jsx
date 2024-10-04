@@ -7,11 +7,11 @@ export const Navbar = () => {
   const { currentUser } = useAuthValue();
   const { logout } = useAuthentication();
   return (
-    <nav className='flex justify-between items-center h-20 px-8 shadow-md'>
+    <nav className='flex justify-between items-center h-20 ps-8 pe-4 md:px-8 shadow-md'>
       <NavLink to="/">
-        <h1 className='text-2xl'>Mini <span className='font-bold'>Blog</span></h1>
+        <h1 className='text-2xl leading-none'>Mini <span className='font-bold'>Blog</span></h1>
       </NavLink>
-      <ul className='flex items-center gap-3'>
+      <ul className='flex items-center md:gap-3'>
         <li>
           <NavLink
             to="/"
@@ -38,7 +38,7 @@ export const Navbar = () => {
               <NavLink
                 to="/posts/create"
                 className={({ isActive }) =>
-                  `px-4 py-2 rounded transition duration-300 ${isActive ? 'bg-black text-white' : 'hover:bg-gray-200'}`
+                  `px-4 py-2 rounded transition duration-300 flex leading-none ${isActive ? 'bg-black text-white' : 'hover:bg-gray-200'}`
                 }
               >
                 Novo post
