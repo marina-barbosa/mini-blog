@@ -1,17 +1,17 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import { useState, useEffect } from "react"
 import { Home } from "./pages/home"
 import { About } from "./pages/about"
+import { Search } from "./pages/search"
 import { Navbar } from "./components/navbar"
 import { Footer } from "./components/footer"
 import { Register } from "./pages/register"
 import { Login } from "./pages/login"
 import { CreatePost } from "./pages/createPost"
 import { Dashboard } from "./pages/dashboard"
+
 import { onAuthStateChanged } from "firebase/auth"
-
-import { useState, useEffect } from "react"
 import { useAuthentication } from "./hooks/useAuthentication"
-
 import { AuthProvider } from "./context/AuthContext"
 
 function App() {
@@ -47,6 +47,7 @@ function App() {
               <Route exact path="/" element={<Home />} />
               <Route exact path="/home" element={<Home />} />
               <Route exact path="/about" element={<About />} />
+              <Route path="/search" element={<Search />} />
               <Route exact path="/register" element={!currentUser ? <Register /> : <Navigate to="/" />} />
               <Route exact path="/login" element={!currentUser ? <Login /> : <Navigate to="/" />} />
               <Route exact path="/posts/create" element={currentUser ? <CreatePost /> : <Navigate to="/login" />} />

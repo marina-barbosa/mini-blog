@@ -19,9 +19,20 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
 
       try {
         let q
-        // busca
-        // dashboard
-        q = await query(collectionRef, orderBy("createdAt", "desc"))
+
+        if (search) {
+          q = await query(
+            collectionRef,
+            where("tagsArray", "array-contains", search),
+            orderBy("createdAt", "desc")
+          )
+        } else {
+          q = await query(
+            collectionRef,
+            orderBy("createdAt", "desc")
+          )
+        }
+
 
         await onSnapshot(q, (QuerySnapshot) => {
           setDocuments(
