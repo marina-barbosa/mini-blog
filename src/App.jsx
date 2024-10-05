@@ -8,6 +8,7 @@ import { Footer } from "./components/footer"
 import { Register } from "./pages/register"
 import { Login } from "./pages/login"
 import { CreatePost } from "./pages/createPost"
+import { EditPost } from "./pages/editPost"
 import { Post } from "./pages/post"
 import { Dashboard } from "./pages/dashboard"
 
@@ -53,6 +54,7 @@ function App() {
               <Route exact path="/register" element={!currentUser ? <Register /> : <Navigate to="/" />} />
               <Route exact path="/login" element={!currentUser ? <Login /> : <Navigate to="/" />} />
               <Route exact path="/posts/create" element={currentUser ? <CreatePost /> : <Navigate to="/login" />} />
+              <Route exact path="/posts/edit/:id" element={currentUser ? <EditPost /> : <Navigate to="/login" />} />
               <Route path="/dashboard" element={currentUser ? <Dashboard /> : <Navigate to="/login" />} />
               <Route path="*" element={() => <Navigate to="/" replace />} />
             </Routes>

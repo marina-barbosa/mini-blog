@@ -9,8 +9,8 @@ export const Post = () => {
       {post && (
         <>
           {loading && <p>Carregando post...</p>}
-          <h1 className="text-2xl font-bold">{post.title}</h1>
-          <img src={post.image} alt={post.title} className="rounded shadow-xl" />
+          <h1 className="text-3xl font-bold mb-5">{post.title}</h1>
+          <img src={post.image} alt={post.title} className="rounded shadow-xl mb-4" />
           <p>{post.body}</p>
           <h3 className="font-bold">Este post trata sobre:</h3>
           <ul className="flex gap-3 mx-auto">

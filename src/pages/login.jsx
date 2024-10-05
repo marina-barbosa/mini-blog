@@ -26,7 +26,7 @@ export const Login = () => {
 
   return (
     <div className="mx-auto md:w-2/5 text-center">
-      <h1 className="text-2xl font-bold">Entrar</h1>
+      <h1 className="text-3xl font-bold mb-5">Entrar</h1>
       <p>Faça o login para poder compartilhar suas histórias</p>
       {/* Form */}
       <form onSubmit={handleSubmit} className="space-y-6 mt-11">

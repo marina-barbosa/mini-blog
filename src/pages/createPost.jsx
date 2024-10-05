@@ -49,7 +49,7 @@ export const CreatePost = () => {
 
   return (
     <div className="mx-auto md:w-2/5 text-center">
-      <h2 className="text-2xl font-bold">Criar post</h2>
+      <h2 className="text-3xl font-bold mb-5">Criar post</h2>
       <p>Escreva sobre o que quiser e compartilhe o seu conhecimento!</p>
 
       <form onSubmit={handleSubmit} className="space-y-6 mt-11">

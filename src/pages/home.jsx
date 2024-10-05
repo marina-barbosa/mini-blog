@@ -1,15 +1,13 @@
 import { useNavigate, Link } from "react-router-dom"
-import { useState } from "react"
 import { useFetchDocuments } from "../hooks/useFetchDocuments"
 import { PostDetail } from "../components/postDetail";
+import { SearchForm } from "../components/searchForm";
 
 export const Home = () => {
-  const [query, setQuery] = useState("");
   const { documents: posts, loading } = useFetchDocuments("posts");
   const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSearch = (query) => {
     if (query) {
       return navigate(`/search?q=${query}`)
     }
@@ -17,22 +15,18 @@ export const Home = () => {
 
   return (
     <div className="mx-auto text-center space-y-6">
-      <h1 className="text-2xl font-bold">Veja nossos posts mais recentes</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="flex">
-          <input type="text" placeholder="Buscar por tags..."
-            onChange={(e) => setQuery(e.target.value)}
-            className="py-[10px] px-3 flex-1" />
-          <button type="submit" className="btn-dark">Buscar</button>
-        </div>
-      </form>
+      <h1 className="text-3xl font-bold mb-5">Veja nossos posts mais recentes</h1>
+      <SearchForm onSubmit={handleSearch} />
 
       <div className="space-y-6">
 
         {loading && <p>Carregando...</p>}
 
-        {posts && posts.map(post => (
-          <PostDetail key={post.id} post={post} />
+        {posts && posts.length > 0 && posts.map((post, index) => (
+          <div key={post.id}>
+            <PostDetail post={post} />
+            {index < posts.length - 1 && <hr className="mb-14" />} {/* Adiciona <hr> entre os posts */}
+          </div>
         ))}
 
         {posts && posts.length === 0 && (

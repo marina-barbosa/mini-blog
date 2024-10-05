@@ -19,11 +19,11 @@
 
   /* Botão Dark */
   .btn-dark {
-    @apply bg-gray-600 text-white text-center cursor-pointer rounded w-[120px] font-bold border-none px-[15px] py-[10px] text-base transition duration-300;
+    @apply bg-black text-white text-center cursor-pointer rounded w-[120px] font-bold border-none px-[15px] py-[10px] text-base transition duration-300;
   }
 
   .btn-dark:hover {
-    @apply bg-black text-white;
+    @apply bg-[#1a8918] text-white;
   }
 
   /* Botão Outline */
@@ -33,6 +33,15 @@
 
   .btn-outline:hover {
     @apply bg-black text-white;
+  }
+
+  /* Botão Danger */
+  .btn-danger {
+    @apply bg-transparent text-gray-600 border border-gray-600 cursor-pointer rounded px-[30px] py-[7px] font-bold text-base transition duration-300;
+  }
+
+  .btn-danger:hover {
+    @apply bg-red-500 text-white;
   }
 
   /* Botão Disabled */

@@ -52,7 +52,7 @@ import { Link } from "react-router-dom";
 import { useAuthValue } from "../context/AuthContext";
 import { useFetchDocuments } from "../hooks/useFetchDocuments";
 import { useDeleteDocument } from "../hooks/useDeleteDocument";
-import { IconEdit, IconTrash, IconPlus } from "@tabler/icons-react";
+import { IconEdit, IconTrash, IconEye } from "@tabler/icons-react";
 
 export const Dashboard = () => {
   const { currentUser } = useAuthValue();
@@ -71,44 +71,47 @@ export const Dashboard = () => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      <h2 className="text-3xl font-bold mb-4">Dashboard</h2>
-      <p className="text-gray-600 mb-6">Gerencie os seus posts</p>
+    <div className="max-w-4xl mx-auto text-center w-full">
+      <h2 className="text-3xl font-bold mb-5">Dashboard</h2>
 
       {posts && posts.length === 0 ? (
         <div className="text-center">
-          <p className="text-lg text-gray-500">Você não tem nenhum post.</p>
-          <Link to="/posts/create" className="btn-primary inline-flex items-center mt-4">
-            <IconPlus className="mr-2" size={20} /> Criar novo post
+          <p className="mb-11">Você não tem nenhum post.</p>
+          <Link to="/posts/create" className="btn-primary">
+            Novo post
           </Link>
         </div>
+
       ) : (
-        <div className="space-y-4">
+
+        <div className="space-y-4 w-full max-w-[600px] mx-auto">
+          <p className="mb-8">Gerencie os seus posts</p>
           {posts && posts.map((post) => (
-            <div key={post.id} className="flex justify-between items-center p-4 bg-white shadow rounded-lg">
-              <Link to={`/post/${post.id}`} className="text-lg font-semibold text-blue-600">
-                {post.title}
+            <div key={post.id} className="flex justify-between items-center p-4 bg-gray-50 shadow rounded-lg font-semibold">
+              <Link to={`/post/${post.id}`} className="flex w-full items-center me-2">
+                <span className="text-left flex-grow hover:text-black">{post.title}</span>
+                <span className="btn-outline"><IconEye size={20} /></span>
               </Link>
               <div className="flex space-x-2">
-                <button
-                  onClick={() => editDocument(post.id)}
-                  className="flex items-center text-yellow-500 hover:text-yellow-600"
-                >
-                  <IconEdit size={20} className="mr-1" />
-                  Editar
-                </button>
+                <Link to={`/posts/edit/${post.id}`} className="btn btn-outline">
+                  {/* Editar */}
+                  <IconEdit size={20} />
+                </Link>
+
                 <button
                   onClick={() => deleteDocument(post.id)}
-                  className="flex items-center text-red-500 hover:text-red-600"
+                  className="flex items-center btn-danger"
                 >
-                  <IconTrash size={20} className="mr-1" />
-                  Excluir
+                  {/* Excluir */}
+                  <IconTrash size={20} />
                 </button>
               </div>
             </div>
           ))}
         </div>
+
       )}
+
     </div>
   );
 };

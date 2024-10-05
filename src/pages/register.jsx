@@ -37,7 +37,7 @@ export const Register = () => {
 
   return (
     <div className="mx-auto md:w-2/5 text-center">
-      <h1 className="text-2xl font-bold">Cadastre-se para postar</h1>
+      <h1 className="text-3xl font-bold mb-5">Cadastre-se para postar</h1>
       <p>Crie sua conta e compartilhe suas histórias</p>
       {/* Form */}
       <form onSubmit={handleSubmit} className="space-y-6 mt-11">
