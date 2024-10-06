@@ -56,13 +56,6 @@ npm run dev
 - Acesse: 
 ### http://localhost:5173/
 
-- Scripts Disponíveis
-```
-npm run dev: Inicia o servidor de desenvolvimento.
-npm run build: Realiza a build para produção.
-npm run lint: Executa o linter para análise de código.
-npm run preview: Visualiza a build da aplicação.
-```
 
 <br>
 
