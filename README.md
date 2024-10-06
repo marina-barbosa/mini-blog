@@ -69,21 +69,21 @@ npm run preview: Visualiza a build da aplicação.
 ## Próximas Funcionalidades
 Aqui estão algumas funcionalidades que planejo adicionar no futuro:
 
-- **Comentários em posts:** Permitir que os usuários comentem nos posts.
-- **Likes em posts:** Permitir que os usuários curtam posts.
-- **Avatar de usuário:** Permitir que os usuários definam e exibam avatares personalizados.
-- **Perfil de usuário:** Oferecer a funcionalidade para edição de informações pessoais, como nome, senha, e-mail e avatar.
-- **Notificações (Toastify):** Implementar notificações amigáveis para feedback visual, como confirmação de ações ou erros.
-- **Personalização de postagens:** Expandir as opções de formatação e personalização na criação de posts, oferecendo mais flexibilidade na escrita, incluindo:
-  - **Negrito, itálico e cabeçalhos:** Para uma melhor organização e destaque de texto.
-  - **Listas ordenadas e não ordenadas:** Para organizar conteúdo em tópicos.
-  - **Blocos de citação:** Para destacar trechos importantes.
-  - **Blocos de código com destaque de sintaxe:** Permitir a inclusão de trechos de código com realce para diferentes linguagens de programação.
-  - **Alinhamento de texto:** Opções para alinhar o texto à esquerda, ao centro ou à direita.
-  - **Espaçamento entre parágrafos e linhas:** Maior controle sobre a estrutura visual do post.
-  - **Tabelas:** Suporte para criação de tabelas para organização de dados.
-  - **Markdown:** Suporte para formatação de texto com Markdown.
-  - **Editor Rich Text (WYSIWYG):** Um editor visual que mostra o post formatado em tempo real.
+- [ ] **Comentários em posts:** Permitir que os usuários comentem nos posts.
+- [ ] **Likes em posts:** Permitir que os usuários curtam posts.
+- [ ] **Avatar de usuário:** Permitir que os usuários definam e exibam avatares personalizados.
+- [ ] **Perfil de usuário:** Oferecer a funcionalidade para edição de informações pessoais, como nome, senha, e-mail e avatar.
+- [ ] **Notificações (Toastify):** Implementar notificações amigáveis para feedback visual, como confirmação de ações ou erros.
+- [ ] **Personalização de postagens:** Expandir as opções de formatação e personalização na criação de posts, oferecendo mais flexibilidade na escrita, incluindo:
+  - [ ] **Negrito, itálico e cabeçalhos:** Para uma melhor organização e destaque de texto.
+  - [ ] **Listas ordenadas e não ordenadas:** Para organizar conteúdo em tópicos.
+  - [ ] **Blocos de citação:** Para destacar trechos importantes.
+  - [ ] **Blocos de código com destaque de sintaxe:** Permitir a inclusão de trechos de código com realce para diferentes linguagens de programação.
+  - [ ] **Alinhamento de texto:** Opções para alinhar o texto à esquerda, ao centro ou à direita.
+  - [ ] **Espaçamento entre parágrafos e linhas:** Maior controle sobre a estrutura visual do post.
+  - [ ] **Tabelas:** Suporte para criação de tabelas para organização de dados.
+  - [ ] **Markdown:** Suporte para formatação de texto com Markdown.
+  - [ ] **Editor Rich Text (WYSIWYG):** Um editor visual que mostra o post formatado em tempo real.
 
 <br>
 
